@@ -193,6 +193,82 @@ kino-layout's type can be one of the following
 
 
 <!--
+Element providing Title Layout for kinoscribe kino-slide elements
+
+##### Example
+
+<kino-pres>
+<kino-slide x="100" y="100" z="-100" rotateX="30" rotateY="30" rotateZ="0" scale=3">
+    <kino-title-layout>
+        <kino-title>
+            Slide 1
+        </kino-title>
+        <kino-subtitle>
+            Author: Rohit Ghatol
+        </kino-subtitle>
+    </kino-title-layout>
+</kino-slide>
+</kino-pres>
+
+@element kino-title-layout
+@blurb Element providing title layout for kinoscribe kino-slide elements
+@status alpha
+@homepage http://github.com/Synerzip/kinoscribe
+-->
+<polymer-element name="kino-title-layout">
+
+    <template>
+
+        <style>
+            :host {
+                display: block;
+                height: 100%;
+                position: relative;
+            }
+
+            #title-layout {
+                height: 100%;
+            }
+
+            #title-layout #title {
+                position: relative;
+                top: 35%;
+                width: 80%;
+                height: 15%;
+                margin: auto;
+                text-align: center;
+                font-size: larger;
+                border-bottom: 1px solid #AAA;
+            }
+            #title-layout #subtitle {
+                position: relative;
+                top: 45%;
+                width: 80%;
+                height: 15%;
+                margin: auto;
+                text-align: center;
+                font-size: large;
+            }
+        </style>
+        <section id="title-layout">
+            <section id="title">
+                <content select="kino-title"></content>
+            </section>
+            <section id="subtitle">
+                <content select="kino-subtitle"></content>
+            </section>
+
+        </section>
+
+    </template>
+    <script>
+
+        Polymer('kino-title-layout', {
+        });
+    </script>
+
+</polymer-element>
+<!--
 Element title element for kinoscribe's kino-title
 
 ##### Example
@@ -248,6 +324,57 @@ Element title element for kinoscribe's kino-title
 
 </polymer-element>
 
+<!--
+Element subtitle element for kinoscribe's kino-title-layout
+
+##### Example
+
+<kino-pres>
+<kino-slide x="100" y="100" z="-100" rotateX="30" rotateY="30" rotateZ="0" scale=3">
+    <kino-title-layout>
+        <kino-title>
+            Slide 1
+        </kino-title>
+        <kino-subtitle>
+            Author: Rohit Ghatol
+        </kino-subtitle>
+    </kino-title-layout>
+</kino-slide>
+</kino-pres>
+
+@element kino-subtitle
+@blurb Element subtitle element for kinoscribe's kino-title-layout
+@status alpha
+@homepage http://github.com/Synerzip/kinoscribe
+-->
+
+<polymer-element name="kino-subtitle">
+
+    <template>
+
+        <style>
+            :host {
+                display: block;
+                height: 100%;
+                width: 100%;
+            }
+
+        </style>
+
+        <section>
+            <content></content>
+        </section>
+
+    </template>
+
+    <script>
+
+        Polymer('kino-subtitle', {
+        });
+
+    </script>
+
+</polymer-element>
 
 <!--
 Element content element for kinoscribe's kino-content
