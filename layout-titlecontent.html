@@ -1,0 +1,60 @@
+<!--
+Copyright (c) 2014 Synerzip. All rights reserved.
+This code may only be used under the Apache 2.0 style license found at http://www.apache.org/licenses/LICENSE-2.0
+Code distributed by Synerzip as part of its showcase apps built on Polymer https://github.com/Synerzip/kinoscribe
+-->
+
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="layout-titleonly.html">
+<!--
+Element providing Title and Content Layout for kinoscribe kino-slide elements
+
+##### Example
+
+<kino-pres>
+<kino-slide x="100" y="100" z="-100" rotateX="30" rotateY="30" rotateZ="0" scale=3">
+    <layout-titlecontent>
+        <kino-title>
+            Slide 1
+        </kino-title>
+        <kino-content>
+            Contents of the slide.
+        </kino-content>
+    </layout-titlecontent>
+</kino-slide>
+</kino-pres>
+
+@element layout-titlecontent
+@extends layout-titleonly
+@blurb Element providing title and content layout for kinoscribe kino-slide elements
+@status alpha
+@homepage http://github.com/Synerzip/kinoscribe
+-->
+<polymer-element name="layout-titlecontent" extends="layout-titleonly">
+
+    <template>
+
+        <style >
+            #layout #content {
+                width:100%;
+                height: 80%;
+                margin: auto;
+            }
+        </style>
+        <section id="layout">
+            <section id="title">
+                <content select="kino-title"></content>
+            </section>
+            <section id="content">
+                <content select="kino-content"></content>
+            </section>
+        </section>
+    </template>
+    <script>
+        Polymer('layout-titlecontent', {
+        });
+    </script>
+
+</polymer-element>
+
+

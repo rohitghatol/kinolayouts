@@ -1,0 +1,61 @@
+<!--
+Copyright (c) 2014 Synerzip. All rights reserved.
+This code may only be used under the Apache 2.0 style license found at http://www.apache.org/licenses/LICENSE-2.0
+Code distributed by Synerzip as part of its showcase apps built on Polymer https://github.com/Synerzip/kinoscribe
+-->
+
+<link rel="import" href="../polymer/polymer.html">
+
+
+
+<!--
+Element subtitle element for kinoscribe's kino layout
+
+##### Example
+
+<kino-pres>
+<kino-slide x="100" y="100" z="-100" rotateX="30" rotateY="30" rotateZ="0" scale=3">
+    <layout-title>
+        <kino-title>
+            Slide 1
+        </kino-title>
+        <kino-subtitle>
+            Author: Rohit Ghatol
+        </kino-subtitle>
+    </layout-title>
+</kino-slide>
+</kino-pres>
+
+@element kino-subtitle
+@blurb Element subtitle element for kinoscribe's kino layout
+@status alpha
+@homepage http://github.com/Synerzip/kinoscribe
+-->
+
+<polymer-element name="kino-subtitle">
+
+    <template>
+
+        <style>
+            :host {
+                display: block;
+                height: 100%;
+                width: 100%;
+            }
+
+        </style>
+
+        <section>
+            <content></content>
+        </section>
+
+    </template>
+
+    <script>
+
+        Polymer('kino-subtitle', {
+        });
+
+    </script>
+
+</polymer-element>
