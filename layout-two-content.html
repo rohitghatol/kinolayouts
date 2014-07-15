@@ -5,7 +5,7 @@ Code distributed by Synerzip as part of its showcase apps built on Polymer https
 -->
 
 <link rel="import" href="../polymer/polymer.html">
-<link rel="import" href="layout-titlecontent.html">
+<link rel="import" href="layout-title-content.html">
 <!--
 Element providing Title and Two Content Layout for kinoscribe kino-slide elements
 
@@ -13,28 +13,35 @@ Element providing Title and Two Content Layout for kinoscribe kino-slide element
 
 <kino-pres>
 <kino-slide x="100" y="100" z="-100" rotateX="30" rotateY="30" rotateZ="0" scale=3">
-    <layout-twocontent>
-        <kino-title>
+    <layout-two-content>
+        <box-title>
             Slide 1
-        </kino-title>
-        <kino-content>
+        </box-title>
+        <box-content>
             Contents of the slide.
-        </kino-content>
-    </layout-twocontent>
+        </box-content>
+    </layout-two-content>
 </kino-slide>
 </kino-pres>
 
-@element layout-twocontent
-@extends layout-titlecontent
+@element layout-two-content
+@extends layout-title-content
 @blurb Element providing title and two content layout for kinoscribe kino-slide elements
 @status alpha
 @homepage http://github.com/Synerzip/kinoscribe
 -->
-<polymer-element name="layout-twocontent" extends="layout-titlecontent">
+<polymer-element name="layout-two-content" extends="layout-titlecontent">
 
     <template>
 
         <style >
+
+            #layout{
+                width:100%;
+                height:100%;
+                padding:20px;
+            }
+
             #layout #title {
                 width: 100%;
                 margin: auto;
@@ -58,18 +65,18 @@ Element providing Title and Two Content Layout for kinoscribe kino-slide element
         </style>
         <section id="layout">
             <section id="title">
-                <content select="kino-title"></content>
+                <content select="box-title"></content>
             </section>
             <section id="contentleft">
-                <content select="kino-content.left"></content>
+                <content select="box-content.left"></content>
             </section>
             <section id="contentright">
-                <content select="kino-content.right"></content>
+                <content select="box-content.right"></content>
             </section>
         </section>
     </template>
     <script>
-        Polymer('layout-twocontent', {
+        Polymer('layout-two-content', {
         });
     </script>
 

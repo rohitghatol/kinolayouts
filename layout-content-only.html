@@ -7,47 +7,56 @@ Code distributed by Synerzip as part of its showcase apps built on Polymer https
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="layout-blank.html">
 <!--
-Element providing Title Only Layout for kinoscribe kino-slide elements
+Element providing Content only Layout for kinoscribe kino-slide elements
 
 ##### Example
 
 <kino-pres>
 <kino-slide x="100" y="100" z="-100" rotateX="30" rotateY="30" rotateZ="0" scale=3">
-    <layout-titlecontent>
-        <kino-title>
-            Slide 1
-        </kino-title>
-    </layout-titlecontent>
+    <layout-content-only>
+        <box-content>
+            For this layout there is no title, only contents are shown.
+        </box-content>
+    </layout-content-only>
 </kino-slide>
 </kino-pres>
 
-@element layout-titleonly
-@extends layout-blank
-@blurb Element providing title only layout for kinoscribe kino-slide elements
+@element layout-contentonly
+@blurb Element providing content only layout for kinoscribe kino-slide elements
 @status alpha
 @homepage http://github.com/Synerzip/kinoscribe
 -->
-<polymer-element name="layout-titleonly" extends="layout-blank">
+<polymer-element name="layout-content-only" extends="layout-blank" >
+
+
 
     <template>
 
         <style >
-            #layout #title {
-                width: 100%;
-                margin: auto;
-                text-align: center;
+            #layout{
+                width:100%;
+                height:100%;
+                padding:20px;
             }
+
+            #layout #content {
+                width:100%;
+                height: 80%;
+
+            }
+
+
         </style>
         <section id="layout">
-            <section id="title">
-                <content select="kino-title"></content>
+            <section id="content">
+                <content select="box-content"></content>
             </section>
         </section>
     </template>
+
     <script>
-        Polymer('layout-titleonly', {
+        Polymer('layout-content-only', {
         });
     </script>
 
 </polymer-element>
-

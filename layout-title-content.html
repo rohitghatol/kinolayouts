@@ -5,7 +5,7 @@ Code distributed by Synerzip as part of its showcase apps built on Polymer https
 -->
 
 <link rel="import" href="../polymer/polymer.html">
-<link rel="import" href="layout-titleonly.html">
+<link rel="import" href="layout-title-only.html">
 <!--
 Element providing Title and Content Layout for kinoscribe kino-slide elements
 
@@ -13,14 +13,14 @@ Element providing Title and Content Layout for kinoscribe kino-slide elements
 
 <kino-pres>
 <kino-slide x="100" y="100" z="-100" rotateX="30" rotateY="30" rotateZ="0" scale=3">
-    <layout-titlecontent>
-        <kino-title>
+    <layout-title-content>
+        <box-title>
             Slide 1
-        </kino-title>
-        <kino-content>
+        </box-title>
+        <box-content>
             Contents of the slide.
-        </kino-content>
-    </layout-titlecontent>
+        </box-content>
+    </layout-title-content>
 </kino-slide>
 </kino-pres>
 
@@ -30,28 +30,42 @@ Element providing Title and Content Layout for kinoscribe kino-slide elements
 @status alpha
 @homepage http://github.com/Synerzip/kinoscribe
 -->
-<polymer-element name="layout-titlecontent" extends="layout-titleonly">
+<polymer-element name="layout-title-content" extends="layout-titleonly">
 
     <template>
 
         <style >
+            #layout{
+                width:100%;
+                height:100%;
+                padding:20px;
+            }
+            #layout #title{
+                width:100%;
+                text-align: center;
+
+
+            }
+
             #layout #content {
                 width:100%;
                 height: 80%;
-                margin: auto;
+
             }
+
+
         </style>
         <section id="layout">
             <section id="title">
-                <content select="kino-title"></content>
+                <content select="box-title"></content>
             </section>
             <section id="content">
-                <content select="kino-content"></content>
+                <content select="box-content"></content>
             </section>
         </section>
     </template>
     <script>
-        Polymer('layout-titlecontent', {
+        Polymer('layout-title-content', {
         });
     </script>
 

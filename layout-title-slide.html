@@ -6,63 +6,61 @@ Code distributed by Synerzip as part of its showcase apps built on Polymer https
 
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="layout-blank.html">
-
 <!--
-Element providing Section Header Layout for kinoscribe kino-slide elements
+Element providing Title Layout for kinoscribe kino-slide elements
 
 ##### Example
 
 <kino-pres>
 <kino-slide x="100" y="100" z="-100" rotateX="30" rotateY="30" rotateZ="0" scale=3">
-    <layout-sectionheader>
-        <kino-title>
+    <layout-title-slide>
+        <box-title>
             Slide 1
-        </kino-title>
-        <kino-subtitle>
+        </box-title>
+        <box-subtitle>
             Author: Rohit Ghatol
-        </kino-subtitle>
-    </layout-sectionheader>
+        </box-subtitle>
+    </layout-title-slide>
 </kino-slide>
 </kino-pres>
 
-@element layout-sectionheader
+@element layout-title-slide
 @extends layout-blank
-@blurb Element providing Section Header layout for kinoscribe kino-slide elements
+@blurb Element providing title layout for kinoscribe kino-slide elements
 @status alpha
 @homepage http://github.com/Synerzip/kinoscribe
 -->
-<polymer-element name="layout-sectionheader" extends="layout-blank">
+<polymer-element name="layout-title-slide" extends="layout-blank">
+
     <template>
+
         <style >
-            #layout {
-                margin-top: 40%;
-            }
             #layout #title {
                 width: 80%;
                 margin: auto;
+                margin-top: 30%;
+                border-bottom: 1px solid #AAA;
                 text-align: center;
             }
             #layout #subtitle {
                 width: 80%;
                 height: 15%;
-                margin-top: 30%;
-                border-bottom: 1px solid #AAA;
                 margin: auto;
                 text-align: center;
                 font-size: larger;
             }
         </style>
         <section id="layout">
-            <section id="subtitle">
-                <content select="kino-subtitle"></content>
-            </section>
             <section id="title">
-                <b><content select="kino-title"></content></b>
+                <b><content select="box-title"></content></b>
+            </section>
+            <section id="subtitle">
+                <content select="box-subtitle"></content>
             </section>
         </section>
     </template>
     <script>
-        Polymer('layout-sectionheader', {
+        Polymer('layout-title-slide', {
         });
     </script>
 

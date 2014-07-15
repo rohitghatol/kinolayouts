@@ -6,35 +6,33 @@ Code distributed by Synerzip as part of its showcase apps built on Polymer https
 
 <link rel="import" href="../polymer/polymer.html">
 
+
+
 <!--
-Element title element for kinoscribe's kino-title
+Element subtitle element for kinoscribe's kino layout
 
 ##### Example
 
 <kino-pres>
 <kino-slide x="100" y="100" z="-100" rotateX="30" rotateY="30" rotateZ="0" scale=3">
-    <layout-titlecontent>
-        <kino-title>
+    <layout-title>
+        <box-title>
             Slide 1
-        </kino-title>
-        <kino-content>
-            <ul>
-                <li>Point 1</li>
-                <li>Point 2</li>
-                <li>Point 3</li>
-            </ul>
-        </kino-content>
-    </layout-titlecontent>
+        </box-title>
+        <box-subtitle>
+            Author: Rohit Ghatol
+        </box-subtitle>
+    </layout-title>
 </kino-slide>
 </kino-pres>
 
-@element kino-title
-@blurb Element title element for kinoscribe's kino-layout
+@element box-subtitle
+@blurb Element subtitle element for kinoscribe's kino layout
 @status alpha
 @homepage http://github.com/Synerzip/kinoscribe
 -->
 
-<polymer-element name="kino-title">
+<polymer-element name="box-subtitle">
 
     <template>
 
@@ -43,7 +41,7 @@ Element title element for kinoscribe's kino-title
                 display: block;
                 height: 100%;
                 width: 100%;
-                font-size: 40px;
+                font-size: 30px;
                 font-weight: bold;
                 padding-bottom: 2%;
             }
@@ -58,7 +56,7 @@ Element title element for kinoscribe's kino-title
 
     <script>
 
-        Polymer('kino-title', {
+        Polymer('box-subtitle', {
         });
 
     </script>
